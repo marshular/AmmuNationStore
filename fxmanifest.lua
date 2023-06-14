@@ -26,3 +26,6 @@ client_scripts {
     'source/menu.lua',
     'source/client.lua'
 }
+
+
+lua54 'yes'

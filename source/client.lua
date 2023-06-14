@@ -42,8 +42,9 @@ AddEventHandler("purchaseWeapon", function(name, hash, price, ammo)
         giveWeapon(name, hash, price)
     else
         giveAmmo(name, ammo, price, hash)
-    end
+end
 end)
+
 
 function giveWeapon(name, hash, price)
     GiveWeaponToPed(PlayerPedId(), GetHashKey(hash), 30, false, false)
