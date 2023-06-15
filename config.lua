@@ -7,11 +7,6 @@
 ------------------------------------------------------------------------
 
 config = {
-    saving = {
-        enabled = true,
-        filePath = "weapons.json" -- don't touch
-    },
-
     menu = {
         position = "right",   --This is not functional
         width = 80, 
@@ -77,6 +72,9 @@ config = {
             ammo_4 = {"Assault Rifle Ammo", "AMMO_RIFLE", 500, "Purchase 150 rounds of Assault Rifle Ammo.", 150},
             ammo_5 = {"LMG Ammo", "AMMO_MG", 700, "Purchase 200 Rounds of Light Machine Gun Ammo.", 200},
             ammo_6 = {"Sniper Ammo", "AMMO_SNIPER", 200, "Purchase 25 Rounds of Sniper Ammo.", 25}
+        },
+        Armor = {
+            armor = {"Armor", "none", 200, "Purchase Full Armor", 1}
         },
     }
 }
