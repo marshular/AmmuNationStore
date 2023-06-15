@@ -42,9 +42,15 @@ AddEventHandler("purchaseWeapon", function(name, hash, price, ammo)
         giveWeapon(name, hash, price)
     else
         giveAmmo(name, ammo, price, hash)
-end
+    end
 end)
 
+function giveArmor(name, price)
+    AddArmourToPed(PlayerPedId(), 100)
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString("You've purchased ~b~" .. name .. " ~w~ for ~g~$" .. price .. ".")
+    DrawNotification(true, true)
+end
 
 function giveWeapon(name, hash, price)
     GiveWeaponToPed(PlayerPedId(), GetHashKey(hash), 30, false, false)

@@ -8,7 +8,7 @@
 
 fx_version 'cerulean'
 game 'gta5'
-
+lua54 'yes'
 title 'Gun Store'
 description 'Gun Store with Andyyy Currency System'
 author 'Andyyy#7666'
@@ -26,6 +26,3 @@ client_scripts {
     'source/menu.lua',
     'source/client.lua'
 }
-
-
-lua54 'yes'

@@ -46,14 +46,18 @@ function Menu()
             local type = NativeUI.CreateItem(weaponInfo[1] .. ": ~g~$" .. weaponInfo[3], weaponInfo[4])
             subMenu:AddItem(type)
             type.Activated = function(ParentMenu, SelectedItem)
-                if weaponInfo[5] then
-                    TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], weaponInfo[5])
-                else
-                    TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], "none")
-                end
+            if weaponInfo[5] then
+                TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], weaponInfo[5])
+            else
+                TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], "none")
+            end
+            if weaponInfo[1] == "Armor" then
+                TriggerServerEvent("purchaseArmor", weaponInfo[3])
+                giveArmor('Armor', weaponInfo[3])
             end
         end
     end
+end
 
     local ToggleClose = NativeUI.CreateItem("Close", "Close the menu")
     mainMenu:AddItem(ToggleClose)
