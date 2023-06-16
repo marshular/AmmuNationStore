@@ -12,8 +12,8 @@ AddEventHandler("purchaseWeapon", function(name, hash, price, ammo)
 end)
 
 
-RegisterNetEvent("purchaseArmor")
-AddEventHandler("purchaseArmor", function(price)
+RegisterNetEvent("purchaseETC")
+AddEventHandler("purchaseETC", function(price)
     local player = source
     local amount = price
     local character = NDCore.Functions.GetPlayer(source)

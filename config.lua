@@ -46,7 +46,7 @@ config = {
             shotguns_6 = {"Combat Shotgun", "weapon_combatshotgun", 1200, "There's only one semi-automatic shotgun with a fire rate that sets the LSFD alarm ringing."}
         },
         Assault_Rifles = {
-            assaultRifles_1 = {"Assault Rifle", "weapon_assaultrifle", 8280, "This standard assault rifle boasts a large capacity magazine and long distance accuracy."},
+            assaultRifles_1 = {"Assault Rifle", "WEAPON_ASSAULTRIFLE", 8280, "This standard assault rifle boasts a large capacity magazine and long distance accuracy."},
             assaultRifles_2 = {"Carbine Rifle", "weapon_carbinerifle", 9700, "Combining long distance accuracy with a high capacity magazine, make the hit."},
             assaultRifles_3 = {"Advanced Rifle", "weapon_advancedrifle", 8800, "The most lightweight and compact of all rifles, without compromising accuracy and fire rate."},
             assaultRifles_4 = {"Special Carbine", "weapon_specialcarbine", 7200, "Combining accuracy, maneuverability, firepower and low recoil, this is extremely versatile."},
@@ -73,8 +73,13 @@ config = {
             ammo_5 = {"LMG Ammo", "AMMO_MG", 700, "Purchase 200 Rounds of Light Machine Gun Ammo.", 200},
             ammo_6 = {"Sniper Ammo", "AMMO_SNIPER", 200, "Purchase 25 Rounds of Sniper Ammo.", 25}
         },
-        Armor = {
-            armor = {"Armor", "none", 200, "Purchase Full Armor", 1}
+        ETC = {
+            armor = {"Armor", "none", 400, "Purchase Full Armor"},
+            silencer = {"Silencer", "none", 205, "Purchase A Silencer For Your Weapon"},
+            flashlight = {"Flashlight", "none", 205, "Purchase A Flashlight For Your Weapon"},
+            grip = {"Grip", "none", 205, "Purchase A Grip For Your Weapon"},
+            yusuf = {"Yusuf", "none", 205, "Purchase A Gold Tint For Your Weapon"},
+            extended = {"Extended Clip", "none", 205, "Purchase A Extended Clip For Your Weapon."}
         },
     }
 }
