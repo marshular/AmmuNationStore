@@ -7,291 +7,79 @@
 ------------------------------------------------------------------------
 
 config = {
-    saving = {
-        enabled = true,
-        filePath = "weapons.json" -- don't touch
-    },
-
     menu = {
-        position = "right",
+        position = "right",   --This is not functional
         width = 80, 
         customImage = true,
         image = "https://i.imgur.com/YHgZX1E.png", -- Another cool image: https://i.imgur.com/ON97ple.png
     },
 
     locations = {
-        {x = 0.00, y = 0.00, z = 0.00}
+        {x = 1693.71, y = 3760.54, z = 34.71}
     },
 
-    categories = {
-        ["Hand Guns"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = false, -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["Pistol"] = {
-                    hashKey = `weapon_pistol`, 
-                    price = 699, 
-                    description = "Most reliable and dependable sidearm for law-enforcement, military and personal defense.",
-                    components = {
-                        ["Default Clip"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_PISTOL_CLIP_01`
-                        },
-                        ["Extended Clip"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_PISTOL_CLIP_02`
-                        },
-                        ["Flashlight"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_PI_FLSH`
-                        },
-                        ["Suppressor"] = {
-                            price = 30,
-                            hashKey = `COMPONENT_AT_PI_SUPP_02`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_PISTOL_VARMOD_LUXE`
-                        }
-                    }
-                },
-            }
+    weapons = {
+        HandGuns = {--FORMAT Display Name, Spawn Code, Price, Description, Amount(On Ammo)
+            pistols_1 = {"Pistol", "weapon_pistol", 699, "Most reliable and dependable sidearm for law-enforcement, military and personal defense."},
+            pistols_2 = {"Combat Pistol", "weapon_combatpistol", 549, "Short recoil-operated, semi-automatic pistol designed and produced by Hawk & Little."},
+            pistols_3 = {"AP Pistol", "weapon_appistol", 6100, "High-penetration, fully-automatic pistol. Holds 18 rounds in the magazine."},
+            pistols_4 = {"Pistol .50", "weapon_pistol50", 2550, "High-impact pistol that delivers immense power but with extremely strong recoil."},
+            pistols_5 = {"SNS Pistol", "weapon_snspistol", 300, "Like condoms or hairspray, this fits in your pocket for a night on the town."},
+            pistols_6 = {"Heavy Pistol", "weapon_heavypistol", 1100, "The heavyweight champion. Delivers accuracy and a serious forearm workout every time."},
+            pistols_7 = {"Heavy Revolver", "weapon_revolver", 5900, "A handgun with enough stopping power to drop a crazed rhino."},
+            pistols_8 = {"Double Action Revolver", "weapon_doubleaction", 279, "Sometimes revenge is a dish best served six times, in quick succession, right between the eyes."}
         },
-        ["Submachine Guns"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = false, -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["Micro SMG"] = {
-                    hashKey = `weapon_microsmg`, 
-                    price = 2400, 
-                    description = "Combines compact design with a high rate of fire at approximately 700-900 rounds per minute.",
-                    components = {
-                        ["Default Clip"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_MICROSMG_CLIP_01`
-                        },
-                        ["Extended Clip"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_MICROSMG_CLIP_02`
-                        },
-                        ["Flashlight"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_PI_FLSH`
-                        },
-                        ["Scope"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_AT_SCOPE_MACRO`
-                        },
-                        ["Suppressor"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_AT_AR_SUPP_02`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_MICROSMG_VARMOD_LUXE`
-                        }
-                    }
-                },
-            }
+        Submachine_Guns = {
+            submachineGuns_1 = {"Micro SMG", "weapon_microsmg", 2400, "Combines compact design with a high rate of fire at approximately 700-900 rounds per minute."},
+            submachineGuns_2 = {"SMG", "weapon_smg", 2150, "This is known as a good all-around submachine gun. Lightweight with an accurate sight."},
+            submachineGuns_3 = {"Assault SMG", "weapon_assaultsmg", 1480, "A high-capacity submachine gun that is both compact and lightweight. Holds up to 30 bullets."},
+            submachineGuns_4 = {"Combat PDW", "weapon_combatpdw", 1799, "Who said personal weaponry couldn't be worthy of military personnel? Integral suppressor."},
+            submachineGuns_5 = {"Machine Pistol", "weapon_machinepistol", 1100, "The snare drum to your twin-engine V8 bass: no drive-by sounds quite right without it."},
+            submachineGuns_6 = {"Mini SMG", "weapon_minismg", 1240, "Increasingly popular since marketing team started caring about little guys in low income areas."}
         },
-        ["Shotguns"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = false, -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["Pump Shotgun"] = {
-                    hashKey = `weapon_pumpshotgun`, 
-                    price = 800, 
-                    description = "Standard shotgun ideal for short-range combat. High-projectile spread, lower accuracy at long range.",
-                    components = {
-                        ["Flashlight"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_AR_FLSH`
-                        },
-                        ["Suppressor"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_AT_SR_SUPP`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_PUMPSHOTGUN_VARMOD_LOWRIDER`
-                        }
-                    }
-                },
-            }
+        Shotguns = {
+            shotguns_1 = {"Pump Shotgun", "weapon_pumpshotgun", 800, "Standard shotgun ideal for short-range combat. High-projectile spread, lower accuracy at long range."},
+            shotguns_2 = {"Sawed-Off Shotgun", "weapon_sawnoffshotgun", 450, "Single-barrel, sawed-off shotgun. Low range and ammo capacity but devastating in close combat."},
+            shotguns_3 = {"Musket", "weapon_musket", 1600, "Armed with nothing but muskets and a superiority complex, the Brits took over half the world."},
+            shotguns_4 = {"Double Barrel Shotgun", "weapon_dbshotgun", 300, "Who needs a high fire rate when your first shot turns the other guy into a fine mist?"},
+            shotguns_5 = {"Sweeper Shotgun", "weapon_autoshotgun", 995, "How many effective tools for riot control can you tuck into your pants?"},
+            shotguns_6 = {"Combat Shotgun", "weapon_combatshotgun", 1200, "There's only one semi-automatic shotgun with a fire rate that sets the LSFD alarm ringing."}
         },
-        ["Assault Rifles"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = false, -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["Assault Rifle"] = {
-                    hashKey = `weapon_assaultrifle`, 
-                    price = 8280, 
-                    description = "This standard assault rifle boasts a large capacity magazine and long distance accuracy.",
-                    components = {
-                        ["Default Clip"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_ASSAULTRIFLE_CLIP_01`
-                        },
-                        ["Extended Clip"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_ASSAULTRIFLE_CLIP_02`
-                        },
-                        ["Drum Magazine"] = {
-                            price = 30,
-                            hashKey = `COMPONENT_ASSAULTRIFLE_CLIP_03`
-                        },
-                        ["Flashlight"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_AR_FLSH`
-                        },
-                        ["Scope"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_SCOPE_MACRO`
-                        },
-                        ["Suppressor"] = {
-                            price = 30,
-                            hashKey = `COMPONENT_AT_AR_SUPP_02`
-                        },
-                        ["Grip"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_AR_AFGRIP`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_ASSAULTRIFLE_VARMOD_LUXE`
-                        }
-                    }
-                },
-            }
+        Assault_Rifles = {
+            assaultRifles_1 = {"Assault Rifle", "WEAPON_ASSAULTRIFLE", 8280, "This standard assault rifle boasts a large capacity magazine and long distance accuracy."},
+            assaultRifles_2 = {"Carbine Rifle", "weapon_carbinerifle", 9700, "Combining long distance accuracy with a high capacity magazine, make the hit."},
+            assaultRifles_3 = {"Advanced Rifle", "weapon_advancedrifle", 8800, "The most lightweight and compact of all rifles, without compromising accuracy and fire rate."},
+            assaultRifles_4 = {"Special Carbine", "weapon_specialcarbine", 7200, "Combining accuracy, maneuverability, firepower and low recoil, this is extremely versatile."},
+            assaultRifles_5 = {"Bullpup Rifle", "weapon_bullpuprifle", 1750, "The latest Chinese import taking America by storm, this rifle is known for balanced handling."},
+            assaultRifles_6 = {"Compact Rifle", "weapon_compactrifle", 2390, "Half the size, all the power, double the recoil: no riskier way to say \"I'm compensating\"."}
         },
-        ["Light Machine Guns"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = false, -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["MG"] = {
-                    hashKey = `weapon_mg`, 
-                    price = 8500, 
-                    description = "General purpose machine. Long range penetrative power. Very effective against large groups.",
-                    components = {
-                        ["Default Clip"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_MG_CLIP_01`
-                        },
-                        ["Extended Clip"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_MG_CLIP_02`
-                        },
-                        ["Scope"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_SCOPE_SMALL_02`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_MG_VARMOD_LOWRIDER`
-                        }
-                    }
-                },
-            }
+        Light_Machine_Guns = {
+            lightMachineGuns_1 = {"MG", "weapon_mg", 8500, "General purpose machine. Long range penetrative power. Very effective against large groups."},
+            lightMachineGuns_2 = {"Combat MG", "weapon_combatmg", 9530, "Lightweight and excellent maneuverability with a high rate of fire to devastating effect."},
+            lightMachineGuns_3 = {"Gusenberg Sweeper", "weapon_gusenberg", 2800, "Looks great sticking out the window of a Roosevelt or paired with a pinstripe suit."}
         },
-        ["Other"] = {
-            type = "weapons", -- weapons / ammo / armor
-            restricted = "ammunation.other", -- false or your prefered ace perm (ex: ammunation.pistols)
-            selection = { -- I GOT REALLY LAZY SO ADD YOUR OWN WEAPONS AND COMPONENTS (https://forge.plebmasters.de/weapons)
-                ["Sniper Rifle"] = {
-                    hashKey = `weapon_sniperrifle`, 
-                    price = 12500, 
-                    description = "Standard sniper rifle. Ideal for situations that require accuracy at long range.",
-                    components = {
-                        ["Suppressor"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_AT_AR_SUPP_02`
-                        },
-                        ["Scope"] = {
-                            price = 10,
-                            hashKey = `COMPONENT_AT_SCOPE_LARGE`
-                        },
-                        ["Advanced Scope"] = {
-                            price = 20,
-                            hashKey = `COMPONENT_AT_SCOPE_MAX`
-                        },
-                        ["Yusuf Amir Luxury Finish"] = {
-                            price = 60,
-                            hashKey = `COMPONENT_SNIPERRIFLE_VARMOD_LUXE`
-                        }
-                    }
-                },
-            }
+        Special_Toys = {
+            special_1 = {"Sniper Rifle", "weapon_sniperrifle", 12500, "Standard sniper rifle. Ideal for situations that require accuracy at long range."},
+            special_2 = {"Marksman Rifle", "weapon_marksmanrifle", 6900, "Whether you're up close or a disconcertingly long way away. A multi-range tool for tools."},
+            special_3 = {"Firework Launcher", "weapon_firework", 2500, "Put the flair back in flare with this firework launcher."},
+            special_4 = {"Molotov Cocktail", "weapon_molotov", 50, "Crude yet highly effective incendiary weapon. No happy hour with this cocktail."},
+            special_5 = {"Flare", "weapon_flare", 25, "Use to signal distress or drunken excitement."}
         },
-        ["Ammo"] = {
-            type = "ammo", -- weapons / ammo / armor
-            selection = {
-                ["Pistol Ammo"] = {
-                    hashKey = "AMMO_PISTOL", 
-                    amount = 60, 
-                    price = 120, 
-                    description = "Purchase 60 rounds of pistol ammo."
-                },
-                ["SMG Ammo"] = {
-                    hashKey = "AMMO_SMG", 
-                    amount = 100, 
-                    price = 250, 
-                    description = "Purchase 100 rounds of SMG ammo."
-                },
-                ["Shotgun Ammo"] = {
-                    hashKey = "AMMO_SHOTGUN", 
-                    amount = 30, 
-                    price = 185, 
-                    description = "Purchase 30 rounds of Shotgun ammo."
-                },
-                ["Assault Rifle Ammo"] = {
-                    hashKey = "AMMO_RIFLE", 
-                    amount = 150, 
-                    price = 500, 
-                    description = "Purchase 150 rounds of Assault Rifle Ammo."
-                },
-                ["MG Ammo"] = {
-                    hashKey = "AMMO_MG", 
-                    amount = 200, 
-                    price = 700, 
-                    description = "Purchase 200 Rounds of Light Machine Gun Ammo."
-                },
-                ["Sniper Ammo"] = {
-                    hashKey = "AMMO_SNIPER", 
-                    amount = 25, 
-                    price = 200, 
-                    description = "Purchase 25 Rounds of Sniper Ammo."
-                }
-            }
+        Ammo = {
+            ammo_1 = {"Pistol Ammo", "AMMO_PISTOL", 120, "Purchase 60 rounds of pistol ammo.", 60},
+            ammo_2 = {"SMG Ammo", "AMMO_SMG", 250, "Purchase 100 rounds of SMG ammo.", 100},
+            ammo_3 = {"Shotgun Ammo", "AMMO_SHOTGUN", 185, "Purchase 30 rounds of Shotgun ammo.", 30},
+            ammo_4 = {"Assault Rifle Ammo", "AMMO_RIFLE", 500, "Purchase 150 rounds of Assault Rifle Ammo.", 150},
+            ammo_5 = {"LMG Ammo", "AMMO_MG", 700, "Purchase 200 Rounds of Light Machine Gun Ammo.", 200},
+            ammo_6 = {"Sniper Ammo", "AMMO_SNIPER", 200, "Purchase 25 Rounds of Sniper Ammo.", 25}
         },
-        ["Armor"] = {
-            type = "armor", -- weapons / ammo / armor
-            selection = {
-                ["Super Light Armor"] = {
-                    amount = 15, 
-                    price = 120, 
-                    description = "Purchase 60 rounds of pistol ammo."
-                },
-                ["Light Armor"] = {
-                    amount = 140, 
-                    price = 250, 
-                    description = "Purchase 100 rounds of SMG ammo."
-                },
-                ["Standard Armor"] = {
-                    amount = 160, 
-                    price = 185, 
-                    description = "Purchase 30 rounds of Shotgun ammo."
-                },
-                ["Heavy Armor"] = {
-                    amount = 180, 
-                    price = 500, 
-                    description = "Purchase 150 rounds of Assault Rifle Ammo."
-                },
-                ["Super Heavy Armor"] = {
-                    amount = 1100, 
-                    price = 700, 
-                    description = "Purchase 200 Rounds of Light Machine Gun Ammo."
-                }
-            }
-        }
+        ETC = {
+            armor = {"Armor", "none", 400, "Purchase Full Armor"},
+            silencer = {"Silencer", "none", 205, "Purchase A Silencer For Your Weapon"},
+            flashlight = {"Flashlight", "none", 205, "Purchase A Flashlight For Your Weapon"},
+            grip = {"Grip", "none", 205, "Purchase A Grip For Your Weapon"},
+            yusuf = {"Yusuf", "none", 205, "Purchase A Gold Tint For Your Weapon"},
+            extended = {"Extended Clip", "none", 205, "Purchase A Extended Clip For Your Weapon."}
+        },
     }
 }

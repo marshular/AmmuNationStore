@@ -6,7 +6,18 @@ AddEventHandler("purchaseWeapon", function(name, hash, price, ammo)
     local amount = price
     local character = NDCore.Functions.GetPlayer(source)
     if character.bank >= amount then
-        NDCore.Functions.DeductMoney(amount, player, "bank")
+        NDCore.Functions.DeductMoney(amount, player, "cash")
         TriggerClientEvent("purchaseWeapon", player, name, hash, price, ammo)   
+    end
+end)
+
+
+RegisterNetEvent("purchaseETC")
+AddEventHandler("purchaseETC", function(price)
+    local player = source
+    local amount = price
+    local character = NDCore.Functions.GetPlayer(source)
+    if character.bank >= amount then
+        NDCore.Functions.DeductMoney(amount, player, "cash") 
     end
 end)

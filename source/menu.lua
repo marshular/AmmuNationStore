@@ -38,7 +38,7 @@ function Menu()
 	_menuPool:ControlDisablingEnabled(false)
 	_menuPool:MouseControlsEnabled(false)
 
-    
+
     for subMenu, items in pairs(config.weapons) do
         local subMenu = _menuPool:AddSubMenu(mainMenu, string.gsub(subMenu, "_", " "), "", true, menuImage, menuImage)
         subMenu:SetMenuWidthOffset(config.menuWidth)
@@ -46,15 +46,44 @@ function Menu()
             local type = NativeUI.CreateItem(weaponInfo[1] .. ": ~g~$" .. weaponInfo[3], weaponInfo[4])
             subMenu:AddItem(type)
             type.Activated = function(ParentMenu, SelectedItem)
-                if weaponInfo[5] then
-                    TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], weaponInfo[5])
-                else
-                    TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], "none")
-                end
+            if weaponInfo[5] then
+                TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], weaponInfo[5])
+            else
+            if weaponInfo[1] == "Armor" then
+                TriggerServerEvent("purchaseETC", weaponInfo[3])
+                giveArmor('Armor', weaponInfo[3])
+            else
+            if weaponInfo[1] == "Silencer" then
+                TriggerServerEvent("purchaseETC", weaponInfo[3])
+                TriggerEvent('addsilencer', source)
+            else
+            if weaponInfo[1] == "Flashlight" then
+                TriggerServerEvent("purchaseETC", weaponInfo[3])
+                TriggerEvent('addflashlight', source)
+            else
+            if weaponInfo[1] == "Grip" then
+                TriggerServerEvent("purchaseETC", weaponInfo[3])
+                TriggerEvent('addgrip', source)
+            else
+            if weaponInfo[1] == "Yusuf" then
+                TriggerServerEvent("purchaseETC", weaponInfo[3])
+                TriggerEvent('addyusuf', source)
+	    else 
+		if weaponInfo[1] == "Extended Clip" then
+		TriggerServerEvent("purchaseETC", weaponInfo[3])
+		TriggerEvent("addextendedclip", source)
+            else
+                TriggerServerEvent("purchaseWeapon", weaponInfo[1], weaponInfo[2], weaponInfo[3], "none")
             end
         end
     end
-
+end
+   end
+      end
+      end
+    end
+ end
+end
     local ToggleClose = NativeUI.CreateItem("Close", "Close the menu")
     mainMenu:AddItem(ToggleClose)
     ToggleClose.Activated = function(ParentMenu, SelectedItem)

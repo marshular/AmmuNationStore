@@ -1,5 +1,5 @@
 ## THIS IS A WORK IN PROGRESS
-Meaning this script doesn't work as of yet.
+Meaning this script is functional but not recommended to use until fully complete.
 
 ### Need Support?
 
